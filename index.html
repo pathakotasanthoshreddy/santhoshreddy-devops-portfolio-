@@ -920,7 +920,10 @@
                             <i class="fas fa-envelope"></i>
                             Contact Me
                         </a>
-                        <a href="Santhosh pathakota.pdf" class="btn btn-outline" id="downloadResume" download>
+                        <a href="https://github.com/pathakotasanthoshreddy/santhoshreddy-devops-portfolio-/raw/main/Santhosh%20pathakota.pdf" 
+                           class="btn btn-outline" 
+                           id="downloadResume" 
+                           download="Santhosh_Pathakota_Resume.pdf">
                             <i class="fas fa-download"></i>
                             Download Resume
                         </a>
@@ -943,7 +946,7 @@
                 </div>
                 <div class="hero-image">
                     <!-- Your GitHub Profile Photo -->
-                    <img src="https://github.com/pathakotasanthoshreddy/santhoshreddy-devops-portfolio-/blob/main/Photo1.png" 
+                    <img src="https://raw.githubusercontent.com/pathakotasanthoshreddy/santhoshreddy-devops-portfolio-/main/Photo1.png" 
                          alt="Santhosh Pathakota" 
                          class="profile-image" 
                          id="profileImage"
@@ -1176,15 +1179,15 @@
                         
                         <div class="success-images">
                             <div class="success-img">
-                                <img src="https://raw.githubusercontent.com/pathakotasanthoshreddy/pathakotasanthoshreddy/main/application%20registration%20Pages-success%20.png" 
+                                <img src="https://raw.githubusercontent.com/pathakotasanthoshreddy/santhoshreddy-devops-portfolio-/main/application%20registration%20Pages-success%20.png" 
                                      alt="VCUBE Registration Success"
                                      onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
                                 <p>Registration Page - Success</p>
                             </div>
                             <div class="success-img">
-                                <img src="https://raw.githubusercontent.com/pathakotasanthoshreddy/pathakotasanthoshreddy/main/application%20-login%20sucess.png" 
+                                <img src="https://raw.githubusercontent.com/pathakotasanthoshreddy/santhoshreddy-devops-portfolio-/main/application%20-login%20sucess.png" 
                                      alt="VCUBE Login Success"
-                                     onerror="this.onerror=null; this.src=''FALLBACK-URL-IF-NEEDED'">
+                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
                                 <p>Login Page - Success</p>
                             </div>
                         </div>
@@ -1265,7 +1268,7 @@
                     </div>
                     
                     <!-- Your GitHub Certificate Logo -->
-                    <img src="https://raw.githubusercontent.com/pathakotasanthoshreddy/pathakotasanthoshreddy/main/Az-900.jpg" 
+                    <img src="https://raw.githubusercontent.com/pathakotasanthoshreddy/santhoshreddy-devops-portfolio-/main/Az-900.jpg" 
                          alt="Microsoft Azure Certification" 
                          class="cert-image" 
                          id="certificateImage"
@@ -1401,52 +1404,15 @@
         
         // Resume download functionality
         document.getElementById('downloadResume').addEventListener('click', function(e) {
-            // If the resume file doesn't exist, create a sample one
-            const resumeExists = true; // Change to false if you want to test the fallback
+            // This will directly download from GitHub
+            console.log('Downloading resume from GitHub...');
             
-            if (!resumeExists) {
-                e.preventDefault();
-                alert('Resume file not found. Please ensure "Santhosh pathakota.pdf" is in the same directory.');
-                
-                // Optional: Create a temporary resume file
-                const resumeContent = `
-                    SANTHOSH REDDY PATHAKOTA
-                    
-                    DevOps Engineer | Hyderabad | +91-70130307931
-                    Email: pathakotasanthoshreddy@gmail.com
-                    LinkedIn: www.linkedin.com/in/santhosh-reddy-pathakota
-                    
-                    SUMMARY:
-                    DevOps professional with 3+ years of experience as Azure DevOps Engineer specializing in Azure, GIT, Terraform, Docker, Kubernetes, and Azure DevOps.
-                    
-                    WORK EXPERIENCE:
-                    - Junior Azure DevOps Trainer at V Cube Software Solutions (Dec 2024 – Present)
-                    - Associate Azure Cloud Engineer at Tech Mahindra Ltd (March 2022 – Feb 2024)
-                    
-                    PROJECT HIGHLIGHT:
-                    VCUBE APP - 3-Tier Python Application
-                    - Built and deployed full 3-Tier architecture on Ubuntu VMs
-                    - AI-assisted development using ChatGPT, DeepSeek, GitHub Copilot
-                    - Python, Flask, MySQL, JWT Authentication
-                    - Successfully demonstrated to students as real-world enterprise example
-                    
-                    SKILLS:
-                    Microsoft Azure, Terraform, Docker, Kubernetes, Azure DevOps, CI/CD, Git, 
-                    Python, Flask, MySQL, 3-Tier Architecture, AI-Assisted Development
-                    
-                    CERTIFICATIONS:
-                    Microsoft Certified: Azure Fundamentals (AZ-900)
-                `;
-                
-                const blob = new Blob([resumeContent], { type: 'application/pdf' });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = 'Santhosh_Pathakota_Resume.pdf';
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                URL.revokeObjectURL(url);
+            // Optional: Add download tracking
+            try {
+                // You can add analytics here if needed
+                console.log('Resume download initiated');
+            } catch (error) {
+                console.log('Download analytics error:', error);
             }
         });
         
@@ -1454,6 +1420,7 @@
         window.addEventListener('load', function() {
             // For demo purposes, we'll check if images loaded
             // The onerror handler in the img tags already handles fallbacks
+            console.log('Portfolio loaded with your GitHub images');
         });
     </script>
 </body>
