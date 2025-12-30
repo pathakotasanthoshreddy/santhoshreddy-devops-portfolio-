@@ -316,25 +316,6 @@
             transform: translateY(-10px);
         }
 
-        .image-placeholder {
-            width: 100%;
-            height: 100%;
-            background: var(--gradient);
-            border-radius: var(--border-radius);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            padding: 30px;
-            text-align: center;
-        }
-
-        .image-placeholder i {
-            font-size: 4rem;
-            margin-bottom: 20px;
-        }
-
         /* Work Experience */
         .experience {
             background-color: var(--light);
@@ -563,6 +544,94 @@
             font-weight: bold;
         }
 
+        /* VCUBE Project Special */
+        .vcube-project {
+            grid-column: span 2;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(6, 182, 212, 0.05) 100%);
+            border-left: 5px solid var(--primary);
+        }
+
+        .architecture-diagram {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .tier-box {
+            background: white;
+            padding: 20px;
+            border-radius: var(--border-radius-sm);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            min-width: 180px;
+            border: 2px solid var(--light-gray);
+        }
+
+        .tier-box h5 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        .tier-box p {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-bottom: 5px;
+        }
+
+        .arrow {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .tech-tag {
+            background-color: rgba(6, 182, 212, 0.1);
+            color: var(--accent);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .success-images {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .success-img {
+            flex: 1;
+            min-width: 250px;
+            border-radius: var(--border-radius-sm);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            border: 1px solid var(--light-gray);
+        }
+
+        .success-img img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .success-img p {
+            padding: 10px;
+            text-align: center;
+            font-size: 0.85rem;
+            background: white;
+        }
+
         /* Education & Certifications */
         .edu-cert-container {
             display: grid;
@@ -612,24 +681,6 @@
             background-color: var(--light-gray);
             aspect-ratio: 4/3;
             object-fit: cover;
-        }
-
-        .cert-image-placeholder {
-            width: 100%;
-            height: 200px;
-            background: var(--gradient);
-            border-radius: var(--border-radius-sm);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            margin: 20px auto;
-        }
-
-        .cert-image-placeholder i {
-            font-size: 3rem;
-            margin-bottom: 15px;
         }
 
         /* Contact & Footer */
@@ -709,30 +760,6 @@
             font-size: 0.9rem;
         }
 
-        /* Upload Image Section */
-        .upload-section {
-            background-color: var(--light);
-            padding: 60px 0;
-        }
-
-        .upload-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: var(--card-bg);
-            padding: 40px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            text-align: center;
-        }
-
-        .upload-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-        }
-
         /* Responsive Design */
         @media (max-width: 992px) {
             .hero-content {
@@ -776,6 +803,18 @@
             .timeline-item:nth-child(odd) .timeline-dot {
                 left: -12px;
                 right: auto;
+            }
+            
+            .vcube-project {
+                grid-column: span 1;
+            }
+            
+            .architecture-diagram {
+                flex-direction: column;
+            }
+            
+            .arrow {
+                transform: rotate(90deg);
             }
         }
 
@@ -834,9 +873,8 @@
                 max-width: 300px;
             }
             
-            .upload-buttons {
+            .success-images {
                 flex-direction: column;
-                align-items: center;
             }
         }
     </style>
@@ -874,7 +912,7 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>Santhosh Reddy Pathakota</h1>
-                    <h2>Azure DevOps Engineer</h2>
+                    <h2>Azure DevOps Engineer & AI-Assisted Developer</h2>
                     <p>DevOps professional with 3+ years of experience specializing in Azure, Terraform, Docker, Kubernetes, and CI/CD pipelines. Passionate about cloud infrastructure, automation, and mentoring the next generation of DevOps engineers.</p>
                     
                     <div class="hero-btns">
@@ -904,13 +942,12 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <!-- Profile Image - Replace with your image -->
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Santhosh Pathakota" class="profile-image" id="profileImage">
-                    <!-- Fallback placeholder -->
-                    <div class="image-placeholder" id="imagePlaceholder" style="display: none;">
-                        <i class="fas fa-user"></i>
-                        <p>Upload your profile image</p>
-                    </div>
+                    <!-- Your GitHub Profile Photo -->
+                    <img src="https://github.com/pathakotasanthoshreddy/santhoshreddy-devops-portfolio-/blob/main/Photo1.png" 
+                         alt="Santhosh Pathakota" 
+                         class="profile-image" 
+                         id="profileImage"
+                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80'">
                 </div>
             </div>
         </div>
@@ -935,6 +972,7 @@
                             <li>Designed and deployed end-to-end demo applications including 3-tier architecture and Kubernetes deployments on AKS</li>
                             <li>Built and explained Azure DevOps CI/CD pipelines with repo setup, branching strategies, and automated workflows</li>
                             <li>Provided technical mentoring, project guidance, and career development support to students</li>
+                            <li>Built and deployed VCUBE APP using full 3-Tier architecture on Ubuntu VMs to demonstrate real-world enterprise systems</li>
                         </ul>
                     </div>
                 </div>
@@ -975,6 +1013,7 @@
                     <div class="skill-tags">
                         <span class="skill-tag">Microsoft Azure</span>
                         <span class="skill-tag">Azure IaaS/PaaS/SaaS</span>
+                        <span class="skill-tag">Ubuntu VMs</span>
                     </div>
                 </div>
                 
@@ -1024,26 +1063,31 @@
                         <div class="skill-icon">
                             <i class="fas fa-code"></i>
                         </div>
-                        <h3>Languages & Scripting</h3>
+                        <h3>Development</h3>
                     </div>
                     <div class="skill-tags">
-                        <span class="skill-tag">Terraform</span>
-                        <span class="skill-tag">PowerShell</span>
-                        <span class="skill-tag">YAML</span>
-                        <span class="skill-tag">Bash</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Flask</span>
+                        <span class="skill-tag">SQLAlchemy</span>
+                        <span class="skill-tag">JWT Auth</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">REST APIs</span>
+                        <span class="skill-tag">3-Tier Architecture</span>
                     </div>
                 </div>
                 
                 <div class="skill-card">
                     <div class="skill-header">
                         <div class="skill-icon">
-                            <i class="fas fa-desktop"></i>
+                            <i class="fas fa-robot"></i>
                         </div>
-                        <h3>Operating Systems</h3>
+                        <h3>AI Tools</h3>
                     </div>
                     <div class="skill-tags">
-                        <span class="skill-tag">Windows</span>
-                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">ChatGPT</span>
+                        <span class="skill-tag">DeepSeek</span>
+                        <span class="skill-tag">GitHub Copilot</span>
+                        <span class="skill-tag">AI-Assisted Development</span>
                     </div>
                 </div>
                 
@@ -1068,9 +1112,89 @@
     <section id="projects" class="projects">
         <div class="container">
             <h2 class="section-title">Projects</h2>
-            <p class="section-subtitle">Real-world implementations and solutions delivered for clients across industries</p>
+            <p class="section-subtitle">Real-world implementations and solutions delivered for clients and personal growth</p>
             
             <div class="projects-grid">
+                <!-- VCUBE Project -->
+                <div class="project-card vcube-project">
+                    <div class="project-header">
+                        <h3>VCUBE APP - 3-Tier Python Application</h3>
+                        <h4>AI-Assisted Full Stack Development & Deployment</h4>
+                    </div>
+                    <div class="project-content">
+                        <p><strong>From a backbencher to deploying real-world 3-Tier applications with AI — and teaching it forward 🚀</strong></p>
+                        
+                        <p>Built and deployed the VCUBE APP using a full 3-Tier architecture on Ubuntu VMs, and explained it to students — showing them how real-time enterprise systems run in production.</p>
+                        
+                        <div class="architecture-diagram">
+                            <div class="tier-box">
+                                <h5>Web Tier</h5>
+                                <p>Flask Frontend</p>
+                                <p>Port: 5000</p>
+                                <p>Handles UI & User Access</p>
+                            </div>
+                            <div class="arrow">→</div>
+                            <div class="tier-box">
+                                <h5>App Tier</h5>
+                                <p>Flask + SQLAlchemy</p>
+                                <p>JWT Authentication</p>
+                                <p>Business Logic & APIs</p>
+                            </div>
+                            <div class="arrow">→</div>
+                            <div class="tier-box">
+                                <h5>DB Tier</h5>
+                                <p>MySQL Database</p>
+                                <p>Port: 3306</p>
+                                <p>Secure Storage</p>
+                            </div>
+                        </div>
+                        
+                        <ul>
+                            <li><strong>Built with AI Assistance:</strong> ChatGPT, DeepSeek, and GitHub Copilot</li>
+                            <li><strong>Full 3-Tier Isolation:</strong> Web Server, App Server, and DB Server on separate Ubuntu VMs</li>
+                            <li><strong>Security:</strong> Firewalls & Network Rules enforced for isolation</li>
+                            <li><strong>End-to-end communication:</strong> Internal only, secure connections</li>
+                            <li><strong>Authentication:</strong> JWT-based secure user authentication</li>
+                            <li><strong>Database:</strong> MySQL with SQLAlchemy ORM</li>
+                            <li><strong>Successfully deployed</strong> and demonstrated to students as a real-world example</li>
+                        </ul>
+                        
+                        <div class="tech-tags">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">SQLAlchemy</span>
+                            <span class="tech-tag">JWT</span>
+                            <span class="tech-tag">3-Tier Architecture</span>
+                            <span class="tech-tag">Ubuntu</span>
+                            <span class="tech-tag">VM Deployment</span>
+                            <span class="tech-tag">ChatGPT</span>
+                            <span class="tech-tag">DeepSeek</span>
+                            <span class="tech-tag">GitHub Copilot</span>
+                            <span class="tech-tag">AI Development</span>
+                        </div>
+                        
+                        <div class="success-images">
+                            <div class="success-img">
+                                <img src="https://raw.githubusercontent.com/pathakotasanthoshreddy/pathakotasanthoshreddy/main/application%20registration%20Pages-success%20.png" 
+                                     alt="VCUBE Registration Success"
+                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                                <p>Registration Page - Success</p>
+                            </div>
+                            <div class="success-img">
+                                <img src="https://raw.githubusercontent.com/pathakotasanthoshreddy/pathakotasanthoshreddy/main/application%20-login%20sucess.png" 
+                                     alt="VCUBE Login Success"
+                                     onerror="this.onerror=null; this.src=''FALLBACK-URL-IF-NEEDED'">
+                                <p>Login Page - Success</p>
+                            </div>
+                        </div>
+                        
+                        <p style="margin-top: 20px; font-style: italic; color: var(--gray);">
+                            "What started from the last bench is now enabling students to understand AI-assisted development, full-stack, cloud, and architecture the way companies build them."
+                        </p>
+                    </div>
+                </div>
+                
                 <div class="project-card">
                     <div class="project-header">
                         <h3>GSK Pharmaceuticals</h3>
@@ -1140,45 +1264,15 @@
                         </div>
                     </div>
                     
-                    <!-- Certificate Image - Replace with your certificate image -->
-                    <img src="https://images.unsplash.com/photo-1587440871875-191322ee64b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" alt="Microsoft Azure Certification" class="cert-image" id="certificateImage">
-                    
-                    <!-- Fallback placeholder -->
-                    <div class="cert-image-placeholder" id="certificatePlaceholder" style="display: none;">
-                        <i class="fas fa-certificate"></i>
-                        <p>Upload your certificate image</p>
-                    </div>
+                    <!-- Your GitHub Certificate Logo -->
+                    <img src="https://raw.githubusercontent.com/pathakotasanthoshreddy/pathakotasanthoshreddy/main/Az-900.jpg" 
+                         alt="Microsoft Azure Certification" 
+                         class="cert-image" 
+                         id="certificateImage"
+                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1587440871875-191322ee64b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80'">
                     
                     <p>Validated foundational knowledge of cloud services and how those services are provided with Microsoft Azure</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Upload Images Section -->
-    <section class="upload-section">
-        <div class="container">
-            <div class="upload-container">
-                <h2>Upload Your Images</h2>
-                <p>You can upload your profile picture and certificate image to personalize your portfolio</p>
-                
-                <div class="upload-buttons">
-                    <button class="btn" id="uploadProfileBtn">
-                        <i class="fas fa-user-circle"></i>
-                        Upload Profile Image
-                    </button>
-                    <button class="btn btn-outline" id="uploadCertificateBtn">
-                        <i class="fas fa-file-certificate"></i>
-                        Upload Certificate Image
-                    </button>
-                </div>
-                
-                <p style="margin-top: 20px; font-size: 0.9rem; color: var(--gray);">
-                    Supported formats: JPG, PNG, WEBP (Max 5MB)
-                </p>
-                
-                <input type="file" id="profileUpload" accept="image/*" style="display: none;">
-                <input type="file" id="certificateUpload" accept="image/*" style="display: none;">
             </div>
         </div>
     </section>
@@ -1329,8 +1423,16 @@
                     - Junior Azure DevOps Trainer at V Cube Software Solutions (Dec 2024 – Present)
                     - Associate Azure Cloud Engineer at Tech Mahindra Ltd (March 2022 – Feb 2024)
                     
+                    PROJECT HIGHLIGHT:
+                    VCUBE APP - 3-Tier Python Application
+                    - Built and deployed full 3-Tier architecture on Ubuntu VMs
+                    - AI-assisted development using ChatGPT, DeepSeek, GitHub Copilot
+                    - Python, Flask, MySQL, JWT Authentication
+                    - Successfully demonstrated to students as real-world enterprise example
+                    
                     SKILLS:
-                    Microsoft Azure, Terraform, Docker, Kubernetes, Azure DevOps, CI/CD, Git, PowerShell, YAML
+                    Microsoft Azure, Terraform, Docker, Kubernetes, Azure DevOps, CI/CD, Git, 
+                    Python, Flask, MySQL, 3-Tier Architecture, AI-Assisted Development
                     
                     CERTIFICATIONS:
                     Microsoft Certified: Azure Fundamentals (AZ-900)
@@ -1348,77 +1450,10 @@
             }
         });
         
-        // Image upload functionality
-        const profileUpload = document.getElementById('profileUpload');
-        const certificateUpload = document.getElementById('certificateUpload');
-        const uploadProfileBtn = document.getElementById('uploadProfileBtn');
-        const uploadCertificateBtn = document.getElementById('uploadCertificateBtn');
-        const profileImage = document.getElementById('profileImage');
-        const certificateImage = document.getElementById('certificateImage');
-        const imagePlaceholder = document.getElementById('imagePlaceholder');
-        const certificatePlaceholder = document.getElementById('certificatePlaceholder');
-        
-        uploadProfileBtn.addEventListener('click', () => {
-            profileUpload.click();
-        });
-        
-        uploadCertificateBtn.addEventListener('click', () => {
-            certificateUpload.click();
-        });
-        
-        profileUpload.addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            if (file) {
-                if (file.size > 5 * 1024 * 1024) {
-                    alert('File size must be less than 5MB');
-                    return;
-                }
-                
-                const reader = new FileReader();
-                reader.onload = function(event) {
-                    profileImage.src = event.target.result;
-                    profileImage.style.display = 'block';
-                    imagePlaceholder.style.display = 'none';
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-        
-        certificateUpload.addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            if (file) {
-                if (file.size > 5 * 1024 * 1024) {
-                    alert('File size must be less than 5MB');
-                    return;
-                }
-                
-                const reader = new FileReader();
-                reader.onload = function(event) {
-                    certificateImage.src = event.target.result;
-                    certificateImage.style.display = 'block';
-                    certificatePlaceholder.style.display = 'none';
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-        
-        // Initialize with placeholder if images don't load
-        profileImage.onerror = function() {
-            profileImage.style.display = 'none';
-            imagePlaceholder.style.display = 'flex';
-        };
-        
-        certificateImage.onerror = function() {
-            certificateImage.style.display = 'none';
-            certificatePlaceholder.style.display = 'flex';
-        };
-        
-        // Check if images exist
+        // Check if images exist and add fallbacks
         window.addEventListener('load', function() {
-            // For demo purposes, we'll use the placeholder for certificate
-            // In production, remove this to use the actual image
-            certificateImage.style.display = 'none';
-            certificatePlaceholder.style.display = 'flex';
+            // For demo purposes, we'll check if images loaded
+            // The onerror handler in the img tags already handles fallbacks
         });
     </script>
 </body>
